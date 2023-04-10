@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/todo_tab"
+        android:enabled="true"
+        android:icon="@drawable/todo"
+        android:title="Todo">
+    </item>
+
+    <item
+        android:id="@+id/cal_tab"
+        android:enabled="true"
+        android:icon="@drawable/calendar"
+        android:title="Calendar">
+    </item>
+</menu>
