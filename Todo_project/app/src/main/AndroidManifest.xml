@@ -26,7 +26,7 @@
         </activity>
 
         <activity android:name=".Create" />
-        <activity android:name=".Login" />
+        <activity android:name=".Main" />
     </application>
 
 </manifest>

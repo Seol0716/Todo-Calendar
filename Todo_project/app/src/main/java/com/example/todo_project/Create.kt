@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.todo_project.databinding.CreateBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -36,6 +37,10 @@ class Create : AppCompatActivity() {
         email = binding.email
         pw= binding.password
 
+
+        //타이틀바 숨기기
+        var actionBar: ActionBar? = supportActionBar
+        actionBar?.hide()
 
         create.setOnClickListener() {
 

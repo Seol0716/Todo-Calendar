@@ -3,22 +3,14 @@ package com.example.todo_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import com.example.todo_project.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.newFixedThreadPoolContext
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,12 +21,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var id: EditText = binding.userId
         var pw: EditText = binding.userPw
 
+        //타이틀바 숨기기
+        var actionBar: ActionBar? = supportActionBar
+        actionBar?.hide()
 
         //회원가입 버튼
         val create: Button = binding.createBtn
@@ -68,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(this, "로그인에 성공했습니다!", Toast.LENGTH_SHORT).show()
 
-                        val intent = Intent(this, Login::class.java)
+                        val intent = Intent(this, Main::class.java)
                         startActivity(intent)
                     }
                     else {
