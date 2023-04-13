@@ -23,7 +23,8 @@ class Todo: Fragment(R.layout.todo) {
     private val data = listOf(
         Data(false,"할 일", false),
         Data(false,"게으름", false),
-        Data(false,"섹스", false)
+        Data(false,"습관", false),
+        Data(false,"고치기", false)
     )
 
     override fun onCreateView(

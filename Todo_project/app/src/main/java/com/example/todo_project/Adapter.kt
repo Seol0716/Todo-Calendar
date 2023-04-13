@@ -43,6 +43,7 @@ import com.example.todo_project.databinding.ItemBinding
          fun bind(data: Data) {
              binding.checkBtn.isChecked = data.complete
              binding.edit.setText(data.title)
+             binding.deleteBtn
          }
      }
 
