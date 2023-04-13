@@ -1,12 +1,12 @@
 package com.example.todo_project
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.todo_project.databinding.MainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class Main : AppCompatActivity() {
     private lateinit var binding: MainBinding
@@ -19,6 +19,7 @@ class Main : AppCompatActivity() {
         binding = MainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         //타이틀바 숨기기
         var actionBar: ActionBar? = supportActionBar
         actionBar?.hide()
@@ -29,6 +30,7 @@ class Main : AppCompatActivity() {
         todo_btn
         var todo: Todo = Todo()
         var calendar: Calendar = Calendar()
+
         //Calendar fragment
 
 
@@ -51,7 +53,12 @@ class Main : AppCompatActivity() {
 
             }
         }
+
+
     }
+
+
+
 }
 
 
