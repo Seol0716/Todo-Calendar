@@ -9,6 +9,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class Main : AppCompatActivity() {
+
     private lateinit var binding: MainBinding
 
 

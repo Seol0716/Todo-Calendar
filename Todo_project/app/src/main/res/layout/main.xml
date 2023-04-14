@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="670dp"
+        android:layout_height="780dp"
         android:id="@+id/main_frag"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/white"
