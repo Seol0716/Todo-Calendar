@@ -18,6 +18,7 @@ class Main : AppCompatActivity() {
 
 
         binding = MainBinding.inflate(layoutInflater)
+        setTheme(R.style.Theme_Todo_project)
         setContentView(binding.root)
 
 
@@ -27,6 +28,7 @@ class Main : AppCompatActivity() {
 
 
         var todo_btn: BottomNavigationView = binding.bottomNavigationView
+
         todo_btn.itemIconTintList = null
         todo_btn
         var todo: Todo = Todo()

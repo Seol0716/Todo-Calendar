@@ -44,16 +44,15 @@ class Todo: Fragment(R.layout.todo) {
 
         //추가기능
         add_btn.setOnClickListener(View.OnClickListener {
-            //
+
+            //추가 데이터 셋팅
             var edit_data = editText.text.toString()
-            var complete_data = false
-            var delete_data = false
 
             if(edit_data.isBlank()){
                 Toast.makeText(context, "할 일을 입력해주세요", Toast.LENGTH_SHORT).show()
             }
             else{
-                data.add(Data(complete_data,edit_data,delete_data))
+                data.add(Data(false,edit_data,false))
                 editText.setText(" ")
 
                 binding?.recycler?.adapter = Adapter(data)
@@ -61,6 +60,7 @@ class Todo: Fragment(R.layout.todo) {
             }
 
         })
+
         val view = binding?.root
 
         create_data()

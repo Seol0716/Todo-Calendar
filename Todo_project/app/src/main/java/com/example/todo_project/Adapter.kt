@@ -20,7 +20,7 @@ import com.example.todo_project.databinding.ItemBinding
          //체크박스 기능
          return ViewHoler(binding).also {holder ->
              binding.checkBtn.setOnCheckedChangeListener(
-                 CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+                 CompoundButton.OnCheckedChangeListener { _, isChecked ->
                      data.getOrNull(holder.adapterPosition)?.complete = isChecked
 
                      if (binding.checkBtn.isChecked) {
