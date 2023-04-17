@@ -63,6 +63,7 @@
         android:layout_marginLeft="20dp"
         android:background="@drawable/button_custom"
         android:text="추가"
+        android:id="@+id/cal_btn"
         android:textColor="@color/black">
 
     </androidx.appcompat.widget.AppCompatButton>
