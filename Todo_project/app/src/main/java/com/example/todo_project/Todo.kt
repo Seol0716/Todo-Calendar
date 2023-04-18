@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todo_project.databinding.TodoBinding
@@ -16,8 +15,8 @@ class Todo: Fragment(R.layout.todo) {
 
     //fragment
     private var _binding: TodoBinding?= null
-    lateinit var editText: EditText
-    lateinit var add_btn: Button
+    private lateinit var editText: EditText
+    private lateinit var add_btn: Button
 
     //view
     private val binding get() = _binding

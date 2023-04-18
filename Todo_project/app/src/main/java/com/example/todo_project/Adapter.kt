@@ -1,14 +1,12 @@
 package com.example.todo_project
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_project.databinding.ItemBinding
 
- class Adapter(private val data: List<Data>): RecyclerView.Adapter<Adapter.ViewHoler>() {
+ class Adapter(private val data: ArrayList<Data>): RecyclerView.Adapter<Adapter.ViewHoler>() {
 
 
      override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHoler {
