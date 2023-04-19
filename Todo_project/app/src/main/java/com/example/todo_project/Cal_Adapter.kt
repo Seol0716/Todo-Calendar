@@ -30,14 +30,11 @@ class Cal_Adapter(private val data: ArrayList<Data_cal>): RecyclerView.Adapter<C
 
     class ViewHolder(private val binding: CalItemCustomBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(data: Data_cal) {
-            if(itemId.toInt() == data.id) {
-                binding.inputData.setText(data.text)
             }
         }
 
     }
 
-}
 
 
 

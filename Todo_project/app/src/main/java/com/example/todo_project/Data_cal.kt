@@ -1,9 +1,12 @@
 package com.example.todo_project
 
+import java.text.FieldPosition
+import java.util.*
+
 data class Data_cal(
-    var text: String,
-    var year: Int,
-    var month: Int,
-    var day: Int,
-    var id: Int,
+    var date: String,
+    var position: Int
 )
+
+
+

@@ -31,7 +31,7 @@ class Main : AppCompatActivity() {
         todo_btn.itemIconTintList = null
         todo_btn
         var todo: Todo = Todo()
-        var calendar: Calendar = Calendar()
+        var calendarFrag: Calendar_frag = Calendar_frag()
 
         //Calendar fragment
 
@@ -46,7 +46,7 @@ class Main : AppCompatActivity() {
                 }
 
                 R.id.cal_tab -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frag, calendar)
+                    supportFragmentManager.beginTransaction().replace(R.id.main_frag, calendarFrag)
                         .commit()
                     return@setOnItemSelectedListener true
                 }
