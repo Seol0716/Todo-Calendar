@@ -40,38 +40,34 @@ class Calendar_frag : Fragment(R.layout.calendar) {
 
         val view = binding?.root
 
-        create_data()
-
         initView(_binding!!)
+
+        create_data()
         return view
     }
 
     private fun initView(binding: CalendarBinding) {
         title = binding.title
-        recyclerView = binding.recycler
+        recyclerView = binding.calRecycler
         position -= (Int.MAX_VALUE / 2)
 
-        val date = Calendar.getInstance().run {
-            add(Calendar.MONTH,position)
-            time
-        }
+        var calendar  = Calendar.getInstance()
 
-        Date = date
+        calendar.time = Date()
+        calendar.set(Calendar.DAY_OF_MONTH,1) //현재 날짜로 초기화
 
-        var date_time: String = SimpleDateFormat("yyyyMM")
-            .format(Date.time)
 
-        text.add(Data_cal(date_time,position))
-        title.setText(date_time)
 
-        binding?.recycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-       
+        title.text = "${calendar.get(Calendar.YEAR)}년 ${calendar.get(Calendar.MONTH) + 1}월"
+        binding?.calRecycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding?.calRecycler?.adapter = Cal_Adapter(text)
 
     }
 
 
     private fun create_data() {
-        binding?.recycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding?.calRecycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
     }
 
     override fun onDestroyView() {
@@ -81,3 +77,5 @@ class Calendar_frag : Fragment(R.layout.calendar) {
 
 
     }
+
+

@@ -4,7 +4,8 @@ import java.text.FieldPosition
 import java.util.*
 
 data class Data_cal(
-    var date: String,
+    var year : String,
+    var month: String,
     var position: Int
 )
 
