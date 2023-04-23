@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_project.databinding.CalendarBinding
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -20,7 +20,7 @@ class Calendar_frag : Fragment(R.layout.calendar) {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var title: TextView
-    private lateinit var adapter: Cal_Adapter
+    private lateinit var adapter: Month_adpater
     private lateinit var Date : Date
     var position: Int = 0
 
@@ -29,7 +29,7 @@ class Calendar_frag : Fragment(R.layout.calendar) {
 
 
     //데이터 셋팅
-    private val text : ArrayList<Data_cal> = arrayListOf()
+    private val text : ArrayList<Month_data> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,26 +47,23 @@ class Calendar_frag : Fragment(R.layout.calendar) {
     }
 
     private fun initView(binding: CalendarBinding) {
-        title = binding.title
         recyclerView = binding.calRecycler
-        position -= (Int.MAX_VALUE / 2)
+        var position: Int = Int.MAX_VALUE / 2
 
-        var calendar  = Calendar.getInstance()
+        binding?.calRecycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding?.calRecycler?.adapter = Month_adpater()
 
-        calendar.time = Date()
-        calendar.set(Calendar.DAY_OF_MONTH,1) //현재 날짜로 초기화
+        //item의 위치 지정
+        binding?.calRecycler?.scrollToPosition(position)
 
-
-
-        title.text = "${calendar.get(Calendar.YEAR)}년 ${calendar.get(Calendar.MONTH) + 1}월"
-        binding?.calRecycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding?.calRecycler?.adapter = Cal_Adapter(text)
+        //항목씩 스크롤 지정
+        val snap = PagerSnapHelper()
+        snap.attachToRecyclerView(binding?.calRecycler)
 
     }
 
-
     private fun create_data() {
-        binding?.calRecycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding?.calRecycler?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
     }
 
