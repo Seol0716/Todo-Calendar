@@ -13,7 +13,7 @@
         android:layout_height="60dp"
         android:layout_weight="1"
         android:padding="16dp"
-        android:textSize="18sp"
+        android:textSize="18dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,7 +25,7 @@
     <!--요일-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="40dp"
         android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -37,7 +37,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="일"
-            android:textSize="9sp" />
+            android:textSize="15dp"
+            android:textColor="@color/black"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -46,7 +47,7 @@
             android:gravity="center"
             android:text="월"
             android:textColor="@color/black"
-            android:textSize="9sp" />
+            android:textSize="15dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -55,7 +56,7 @@
             android:gravity="center"
             android:text="화"
             android:textColor="@color/black"
-            android:textSize="9sp" />
+            android:textSize="15dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -64,7 +65,7 @@
             android:gravity="center"
             android:text="수"
             android:textColor="@color/black"
-            android:textSize="9sp" />
+            android:textSize="15dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -73,7 +74,7 @@
             android:gravity="center"
             android:text="목"
             android:textColor="@color/black"
-            android:textSize="9sp" />
+            android:textSize="15dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -82,7 +83,7 @@
             android:gravity="center"
             android:text="금"
             android:textColor="@color/black"
-            android:textSize="9sp" />
+            android:textSize="15dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -97,7 +98,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="700dp"
+        android:id="@+id/month_recycler"
         app:layout_constraintTop_toBottomOf="@id/month_layout">
-
     </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
