@@ -13,10 +13,11 @@
         android:layout_height="60dp"
         android:layout_weight="1"
         android:padding="16dp"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:textAlignment="center"
         android:id="@+id/title"
         android:background="#FFD700">
 
@@ -91,7 +92,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="토"
-            android:textSize="9sp" />
+            android:textSize="15dp"
+            android:textColor="@color/black"/>
     </LinearLayout>
     <!--달력뷰-->
 

@@ -12,7 +12,6 @@ import java.util.*
 class Day_adapter(val tempMonth:Int, val dayList: MutableList<Date>) : RecyclerView.Adapter<Day_adapter.DayView>() {
     val ROW =6
     class DayView(val layout: View): RecyclerView.ViewHolder(layout)
-    var date: Date = Date()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayView {
        var view = LayoutInflater.from(parent.context).inflate(R.layout.day_item,parent,false)
