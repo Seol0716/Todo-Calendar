@@ -39,7 +39,7 @@
             android:gravity="center"
             android:text="일"
             android:textSize="15dp"
-            android:textColor="@color/black"/>
+            android:textColor="#FF0000"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -93,7 +93,7 @@
             android:gravity="center"
             android:text="토"
             android:textSize="15dp"
-            android:textColor="@color/black"/>
+            android:textColor="#0000FF"/>
     </LinearLayout>
     <!--달력뷰-->
 

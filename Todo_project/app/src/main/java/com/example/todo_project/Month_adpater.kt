@@ -37,6 +37,8 @@ class Month_adpater: RecyclerView.Adapter<Month_adpater.Month>() {
 
         //title 텍스트 초기화
         var title_text: TextView =  holder.view.findViewById<TextView>(R.id.title)
+
+        //현재 날짜 출력
         title_text.setText("${calendar.get(Calendar.YEAR)}년 ${calendar.get(Calendar.MONTH) + 1}월")
 
         val tempMonth = calendar.get(Calendar.MONTH)
@@ -47,19 +49,19 @@ class Month_adpater: RecyclerView.Adapter<Month_adpater.Month>() {
         //6주 7일로 날짜를 표시
         var dayList: MutableList<Date> = MutableList(6 * 7 ) { Date() }
 
-        for(i in 0..5) {
-            for (k in 0..6) {
+        for(i in 0..5) { //주
+            for (k in 0..6) { //요일
                 //각 달의 요일만큼 캘린더에 보여진다
+                //요일 표시
                 calendar.add(Calendar.DAY_OF_MONTH, (1 - calendar.get(Calendar.DAY_OF_WEEK)) + k)
-                dayList[i * 7 + k] = calendar.time //각 달의 요일만큼 dayList에 저장
+                dayList[i * 7 + k] = calendar.time //배열 인덱스 만큼 요일 데이터 저장
             }
+            //주 표시
             calendar.add(Calendar.WEEK_OF_MONTH, 1)
         }
 
-        val dayListManager = GridLayoutManager(holder.view.context,7)
-        val dayAdapter = Day_adapter(tempMonth,dayList)
-        list_layout.layoutManager = dayListManager
-        list_layout.adapter = dayAdapter
+        list_layout.layoutManager = GridLayoutManager(holder.view.context,7)
+        list_layout.adapter = Day_adapter(tempMonth,dayList)
     }
 
 

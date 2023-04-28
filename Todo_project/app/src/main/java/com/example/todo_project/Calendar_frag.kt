@@ -28,9 +28,6 @@ class Calendar_frag : Fragment(R.layout.calendar) {
     private val binding get() = _binding
 
 
-    //데이터 셋팅
-    private val text : ArrayList<Month_data> = arrayListOf()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
