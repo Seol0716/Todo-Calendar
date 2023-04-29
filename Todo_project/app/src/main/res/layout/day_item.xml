@@ -15,5 +15,4 @@
         android:text="9"
         android:layout_marginLeft="18dp"
         android:textColor="@color/black"/>
-
 </LinearLayout>
