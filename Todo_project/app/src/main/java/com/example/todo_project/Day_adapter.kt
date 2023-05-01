@@ -15,8 +15,7 @@ import java.util.*
 class Day_adapter(val tempMonth:Int, val dayList: MutableList<Date>) : RecyclerView.Adapter<Day_adapter.DayView>() {
     val ROW =6
     class DayView(val layout: View): RecyclerView.ViewHolder(layout)
-    var click_count :Int = 0
-    var click_check : Boolean = true
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayView {
        var view = LayoutInflater.from(parent.context).inflate(R.layout.day_item,parent,false)
 
@@ -38,27 +37,6 @@ class Day_adapter(val tempMonth:Int, val dayList: MutableList<Date>) : RecyclerV
         } else if (position == 0 || position % 7 == 0) {
             day_text.setTextColor(ContextCompat.getColor(holder.layout.context,R.color.red))
         }
-
-        holder.layout.setOnClickListener(View.OnClickListener {
-            v: View? ->
-            click_count += 1
-
-            if(click_count == 1){
-                day_text.setBackgroundResource(R.drawable.item_click_custom)
-
-            }
-            else {
-                day_text.setBackgroundColor(ContextCompat.getColor(holder.layout.context,R.color.white))
-                click_count = 0
-
-            }
-
-        })
-        /*
-        recycler.layoutManager = LinearLayoutManager(holder.layout.context,LinearLayoutManager.VERTICAL,false)
-        recycler
-        */
-
     }
 
 
