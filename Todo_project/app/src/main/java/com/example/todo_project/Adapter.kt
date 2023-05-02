@@ -1,6 +1,7 @@
 package com.example.todo_project
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import androidx.recyclerview.widget.RecyclerView
@@ -15,8 +16,9 @@ import com.example.todo_project.databinding.ItemBinding
              parent, false
          )
 
-         //체크박스 기능
+
          return ViewHoler(binding).also {holder ->
+             //체크박스 기능
              binding.checkBtn.setOnCheckedChangeListener(
                  CompoundButton.OnCheckedChangeListener { _, isChecked ->
                      data.getOrNull(holder.adapterPosition)?.complete = isChecked
@@ -28,11 +30,21 @@ import com.example.todo_project.databinding.ItemBinding
                          binding.checkBtn.setBackgroundResource(R.drawable.item_button_custom)
                      }
                  })
+
+             //삭제기능
+             binding.deleteBtn.setOnClickListener(View.OnClickListener { v: View? ->
+                 if(data.get(holder.adapterPosition)?.complete == true){
+                     data.removeAt(holder.adapterPosition)
+                 }
+             })
+
          }
      }
 
      override fun onBindViewHolder(holder: Adapter.ViewHoler, position: Int) {
          holder.bind(data[position])
+
+
      }
 
      override fun getItemCount(): Int = data.size
