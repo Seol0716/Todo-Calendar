@@ -19,10 +19,6 @@ class Calendar_frag : Fragment(R.layout.calendar) {
     private var _binding: CalendarBinding ?= null
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var title: TextView
-    private lateinit var adapter: Month_adpater
-    private lateinit var Date : Date
-    var position: Int = 0
 
     //view
     private val binding get() = _binding
@@ -68,8 +64,6 @@ class Calendar_frag : Fragment(R.layout.calendar) {
         super.onDestroyView()
         _binding = null
     }
-
-
     }
 
 

@@ -33,7 +33,7 @@ import com.example.todo_project.databinding.ItemBinding
 
              //삭제기능
              binding.deleteBtn.setOnClickListener(View.OnClickListener { v: View? ->
-                 if(data.get(holder.adapterPosition)?.complete == true){
+                 if(data.getOrNull(holder.adapterPosition)?.complete == true || holder.adapterPosition == data.getOrNull(holder.adapterPosition)?.id){
                      data.removeAt(holder.adapterPosition)
                  }
              })

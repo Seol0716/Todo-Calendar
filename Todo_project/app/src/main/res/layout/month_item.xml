@@ -97,6 +97,7 @@
     </LinearLayout>
     <!--달력뷰-->
 
+    <!-- 요일이 보여질 리사이클러뷰-->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="550dp"
@@ -104,15 +105,4 @@
         app:layout_constraintTop_toBottomOf="@id/month_layout">
     </androidx.recyclerview.widget.RecyclerView>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:id="@+id/add"
-        app:layout_constraintTop_toBottomOf="@id/month_recycler"
-        android:background="@drawable/button_custom"
-        android:text="추가"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="30dp">
-
-    </androidx.appcompat.widget.AppCompatButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

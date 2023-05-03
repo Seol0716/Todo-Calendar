@@ -40,7 +40,7 @@ class Month_adpater: RecyclerView.Adapter<Month_adpater.Month>() {
 
         //title 텍스트 초기화
         var title_text: TextView =  holder.view.findViewById<TextView>(R.id.title)
-        var add_button: Button = holder.view.findViewById <Button>(R.id.add)
+
 
         //현재 날짜 출력
         title_text.setText("${calendar.get(Calendar.YEAR)}년 ${calendar.get(Calendar.MONTH) + 1}월")
@@ -65,48 +65,18 @@ class Month_adpater: RecyclerView.Adapter<Month_adpater.Month>() {
         }
 
 
-        //아이템 선택시 선택기능
-        list_layout.setOnClickListener(View.OnClickListener {
 
-            v: View? ->
+            list_layout.layoutManager = GridLayoutManager(holder.view.context, 7)
+            list_layout.adapter = Day_adapter(tempMonth, dayList)
 
-            var check_boolean : Boolean = false
-            var click_count :Int = 0
-
-            click_count += 1
-
-            if(click_count == 1){
-                v?.setBackgroundResource(R.drawable.item_click_custom)
-                check_boolean = true
             }
 
-            else {
-                v?.setBackgroundColor(ContextCompat.getColor(holder.view.context,R.color.white))
-                click_count = 0
-                check_boolean = false
+            override fun getItemCount(): Int {
+                return Int.MAX_VALUE / 2
             }
 
-            //일정 아이템 구가 기능
-            if(click_count == 1 || check_boolean == true)
-            add_button.setOnClickListener(View.OnClickListener { v: View? ->
+            class Month(val view: View) : RecyclerView.ViewHolder(view)
 
-                val intent = Intent(holder.view.context,Schedule_add::class.java)
-                ContextCompat.startActivity(holder.view.context,intent,null)
-            })
-
-        })
-        list_layout.layoutManager = GridLayoutManager(holder.view.context,7)
-        list_layout.adapter = Day_adapter(tempMonth,dayList)
-    }
-
-
-
-
-    override fun getItemCount(): Int {
-        return Int.MAX_VALUE / 2
-    }
-
-    class Month(val view: View) : RecyclerView.ViewHolder(view)
     }
 
 

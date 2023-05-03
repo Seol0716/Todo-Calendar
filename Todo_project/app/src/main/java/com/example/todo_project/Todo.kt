@@ -23,9 +23,9 @@ class Todo: Fragment(R.layout.todo) {
 
     //데이터 셋팅
     private val data : ArrayList<Data> = arrayListOf(
-        Data(false,"게으른",false),
-        Data(false,"습관",false),
-        Data(false,"고치기",false)
+        Data(1,false,"게으른",false),
+        Data(2,false,"습관",false),
+        Data(3,false,"고치기",false)
     )
 
 
@@ -43,7 +43,8 @@ class Todo: Fragment(R.layout.todo) {
 
         //추가기능
         add_btn.setOnClickListener(View.OnClickListener {
-
+            var id: Int = 4
+            id += 1
             //추가 데이터 셋팅
             var edit_data = editText.text.toString()
 
@@ -51,7 +52,7 @@ class Todo: Fragment(R.layout.todo) {
                 Toast.makeText(context, "할 일을 입력해주세요", Toast.LENGTH_SHORT).show()
             }
             else{
-                data.add(Data(false,edit_data,false))
+                data.add(Data(id,false,edit_data,false))
                 editText.setText(" ")
 
                 binding?.recycler?.adapter = Adapter(data)
