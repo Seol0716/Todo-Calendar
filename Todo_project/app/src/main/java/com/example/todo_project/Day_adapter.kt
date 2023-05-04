@@ -5,12 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.compose.ui.graphics.Color
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.collection.LLRBNode
 import java.util.*
 
 class Day_adapter(val tempMonth:Int, val dayList: MutableList<Date>) : RecyclerView.Adapter<Day_adapter.DayView>() {
@@ -43,26 +39,7 @@ class Day_adapter(val tempMonth:Int, val dayList: MutableList<Date>) : RecyclerV
             day_text.setTextColor(ContextCompat.getColor(holder.layout.context,R.color.red))
         }
 
-        //단일선택 기능
-        holder.layout.setOnClickListener {
-            View.OnClickListener { v: View? ->
 
-                val currentPosition = holder.adapterPosition
-
-                if (selectedItemPosition == currentPosition) {
-                    day_text.setBackgroundColor(ContextCompat.getColor(holder.layout.context,R.color.white))
-                } else {
-
-                    if(selectedItemPosition >= 0 || selectedItemPosition != null){
-                        day_text.setBackgroundColor(ContextCompat.getColor(holder.layout.context,R.color.white))
-                    }
-
-                    selectedItemPosition = currentPosition
-                    day_text.setBackgroundResource(R.drawable.item_click_custom)
-                }
-            }
-
-        }
         //텍스트 클릭시 아이템 추가 레이아웃 이동
         day_text.setOnClickListener(View.OnClickListener { v: View? ->
 
@@ -77,12 +54,6 @@ class Day_adapter(val tempMonth:Int, val dayList: MutableList<Date>) : RecyclerV
             sum += click_count
 
             day_text.setBackgroundResource(R.drawable.item_click_custom)
-            check_boolean = true
-
-            if (click_count == 1 || check_boolean == true) {
-                val intent = Intent(holder.layout.context, Schedule_add::class.java)
-                ContextCompat.startActivity(holder.layout.context, intent, null)
-            }
         })
     }
 
